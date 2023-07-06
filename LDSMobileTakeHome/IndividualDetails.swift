@@ -25,11 +25,11 @@ struct IndividualDetails: View {
                 }
                 .padding(.horizontal, -40)
             }
-            
 
             Section {
                 HStack {
                     Text("Affiliation", comment: "Title for affiliation row in individual details")
+                    
                     Spacer()
                     
                     Group {
@@ -45,14 +45,18 @@ struct IndividualDetails: View {
                 
                 HStack {
                     Text("Birthdate", comment: "Title for birthdate row in individual details")
+                    
                     Spacer()
+                    
                     Text(individual.birthdate.formatted(date: .long, time: .omitted))
                         .foregroundStyle(.secondary)
                 }
                 
                 HStack {
                     Text("Force Sensitive", comment: "Title for force sensitive row in individual details")
+                    
                     Spacer()
+                    
                     Image(systemName: individual.forceSensitive ? "checkmark" : "xmark")
                         .bold()
                         .foregroundStyle(individual.forceSensitive ? Color.green : Color.red)
