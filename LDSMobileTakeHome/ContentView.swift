@@ -10,53 +10,50 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Query(sort: \.id) private var individuals: [Individual]
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-#if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-#endif
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
+                ForEach(individuals) { individual in
+                    IndividualCell(individual: individual)
                 }
             }
-            Text("Select an item")
+            .navigationTitle(Text("Individuals", comment: "Nav title for main individual list"))
+            .refreshable {
+                await fetchAndReplaceExistingModels()
+            }
+        }
+        .task {
+            // There's a bug right now where enums are not persisted properly (https://stackoverflow.com/questions/76476806/how-to-persist-custom-enum-with-swiftdata).
+            // Ideally, we'd only fetch here when there was no data stored, like this:
+//            if individuals.isEmpty {
+//                await fetchAndSaveModels()
+//            }
+            
+            // Instead, to work around the bug, we'll clear out what we have and refetch each time
+            await fetchAndReplaceExistingModels()
         }
     }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
+    
+    func fetchAndReplaceExistingModels() async {
+        if let success = try? modelContext.delete(model: Individual.self), success {
+            await fetchAndSaveModels()
         }
     }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
+    
+    func fetchAndSaveModels() async {
+        if let individuals = await NetworkManager.shared.fetchIndividuals() {
+            for individual in individuals {
+                modelContext.insert(individual)
             }
+            
+            try? modelContext.save()
         }
     }
 }
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: Individual.self, inMemory: true)
 }

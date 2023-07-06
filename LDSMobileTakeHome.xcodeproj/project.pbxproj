@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		E3793D932A5645D7006E5E55 /* LDSMobileTakeHomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3793D922A5645D7006E5E55 /* LDSMobileTakeHomeApp.swift */; };
-		E3793D952A5645D7006E5E55 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3793D942A5645D7006E5E55 /* Item.swift */; };
+		E3793D952A5645D7006E5E55 /* Individual.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3793D942A5645D7006E5E55 /* Individual.swift */; };
 		E3793D972A5645D7006E5E55 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3793D962A5645D7006E5E55 /* ContentView.swift */; };
 		E3793D992A5645DA006E5E55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3793D982A5645DA006E5E55 /* Assets.xcassets */; };
 		E3793D9D2A5645DA006E5E55 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3793D9C2A5645DA006E5E55 /* Preview Assets.xcassets */; };
+		E3793DA62A565560006E5E55 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3793DA52A565560006E5E55 /* NetworkManager.swift */; };
+		E3793DAA2A56696F006E5E55 /* IndividualCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3793DA92A56696F006E5E55 /* IndividualCell.swift */; };
+		E3793DAC2A566A14006E5E55 /* IndividualDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3793DAB2A566A14006E5E55 /* IndividualDetails.swift */; };
+		E3793DAE2A5673F4006E5E55 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E3793DAD2A5673F4006E5E55 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E3793D8F2A5645D7006E5E55 /* LDSMobileTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LDSMobileTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3793D922A5645D7006E5E55 /* LDSMobileTakeHomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LDSMobileTakeHomeApp.swift; sourceTree = "<group>"; };
-		E3793D942A5645D7006E5E55 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		E3793D942A5645D7006E5E55 /* Individual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Individual.swift; sourceTree = "<group>"; };
 		E3793D962A5645D7006E5E55 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E3793D982A5645DA006E5E55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3793D9A2A5645DA006E5E55 /* LDSMobileTakeHome.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LDSMobileTakeHome.entitlements; sourceTree = "<group>"; };
 		E3793D9C2A5645DA006E5E55 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E3793DA52A565560006E5E55 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E3793DA92A56696F006E5E55 /* IndividualCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualCell.swift; sourceTree = "<group>"; };
+		E3793DAB2A566A14006E5E55 /* IndividualDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualDetails.swift; sourceTree = "<group>"; };
+		E3793DAD2A5673F4006E5E55 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +63,12 @@
 			isa = PBXGroup;
 			children = (
 				E3793D922A5645D7006E5E55 /* LDSMobileTakeHomeApp.swift */,
-				E3793D942A5645D7006E5E55 /* Item.swift */,
 				E3793D962A5645D7006E5E55 /* ContentView.swift */,
+				E3793DA92A56696F006E5E55 /* IndividualCell.swift */,
+				E3793DAB2A566A14006E5E55 /* IndividualDetails.swift */,
+				E3793DA52A565560006E5E55 /* NetworkManager.swift */,
+				E3793D942A5645D7006E5E55 /* Individual.swift */,
+				E3793DAD2A5673F4006E5E55 /* Localizable.xcstrings */,
 				E3793D982A5645DA006E5E55 /* Assets.xcassets */,
 				E3793D9A2A5645DA006E5E55 /* LDSMobileTakeHome.entitlements */,
 				E3793D9B2A5645DA006E5E55 /* Preview Content */,
@@ -132,6 +144,7 @@
 			files = (
 				E3793D9D2A5645DA006E5E55 /* Preview Assets.xcassets in Resources */,
 				E3793D992A5645DA006E5E55 /* Assets.xcassets in Resources */,
+				E3793DAE2A5673F4006E5E55 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +155,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3793D952A5645D7006E5E55 /* Item.swift in Sources */,
+				E3793DA62A565560006E5E55 /* NetworkManager.swift in Sources */,
+				E3793D952A5645D7006E5E55 /* Individual.swift in Sources */,
+				E3793DAA2A56696F006E5E55 /* IndividualCell.swift in Sources */,
+				E3793DAC2A566A14006E5E55 /* IndividualDetails.swift in Sources */,
 				E3793D932A5645D7006E5E55 /* LDSMobileTakeHomeApp.swift in Sources */,
 				E3793D972A5645D7006E5E55 /* ContentView.swift in Sources */,
 			);

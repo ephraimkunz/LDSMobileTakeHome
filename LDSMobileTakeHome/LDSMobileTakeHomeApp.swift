@@ -10,11 +10,10 @@ import SwiftData
 
 @main
 struct LDSMobileTakeHomeApp: App {
-
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: Item.self)
+        .modelContainer(for: Individual.self)
     }
 }

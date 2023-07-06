@@ -1,0 +1,32 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@ %@" : {
+      "comment" : "Full name format. First %@ is first name, seconds %@ is last name",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
+    "Affiliation" : {
+      "comment" : "Title for affiliation row in individual details"
+    },
+    "Birthdate" : {
+      "comment" : "Title for birthdate row in individual details"
+    },
+    "Force Sensitive" : {
+      "comment" : "Title for force sensitive row in individual details"
+    },
+    "Individuals" : {
+      "comment" : "Nav title for main individual list"
+    },
+    "Statistics" : {
+      "comment" : "Section title in event details for individual statistics"
+    }
+  },
+  "version" : "1.0"
+}
